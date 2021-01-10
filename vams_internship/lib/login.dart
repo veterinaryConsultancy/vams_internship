@@ -211,7 +211,7 @@ class _LoginPageState extends State<LoginPage> {
       text: TextSpan(
           text: 'VA',
           style: GoogleFonts.portLligatSans(
-            textStyle: Theme.of(context).textTheme.display1,
+            
             fontSize: 30,
             fontWeight: FontWeight.w700,
             color: Color(0xffe46b10),

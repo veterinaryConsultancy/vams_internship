@@ -80,6 +80,12 @@
       "languageVersion": "2.10"
     },
     {
+      "name": "flutter_svg",
+      "rootUri": "file:///C:/Users/ajayn/Documents/flutter_windows_1.17.5-stable/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_svg-0.18.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///C:/Users/ajayn/Documents/flutter_windows_1.17.5-stable/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -128,6 +134,18 @@
       "languageVersion": "2.10"
     },
     {
+      "name": "path_drawing",
+      "rootUri": "file:///C:/Users/ajayn/Documents/flutter_windows_1.17.5-stable/flutter/.pub-cache/hosted/pub.dartlang.org/path_drawing-0.4.1+1",
+      "packageUri": "lib/",
+      "languageVersion": "1.19"
+    },
+    {
+      "name": "path_parsing",
+      "rootUri": "file:///C:/Users/ajayn/Documents/flutter_windows_1.17.5-stable/flutter/.pub-cache/hosted/pub.dartlang.org/path_parsing-0.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "1.19"
+    },
+    {
       "name": "path_provider",
       "rootUri": "file:///C:/Users/ajayn/Documents/flutter_windows_1.17.5-stable/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-1.6.24",
       "packageUri": "lib/",
@@ -162,6 +180,12 @@
       "rootUri": "file:///C:/Users/ajayn/Documents/flutter_windows_1.17.5-stable/flutter/.pub-cache/hosted/pub.dartlang.org/pedantic-1.9.2",
       "packageUri": "lib/",
       "languageVersion": "2.1"
+    },
+    {
+      "name": "petitparser",
+      "rootUri": "file:///C:/Users/ajayn/Documents/flutter_windows_1.17.5-stable/flutter/.pub-cache/hosted/pub.dartlang.org/petitparser-3.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
     },
     {
       "name": "platform",
@@ -248,13 +272,19 @@
       "languageVersion": "2.3"
     },
     {
+      "name": "xml",
+      "rootUri": "file:///C:/Users/ajayn/Documents/flutter_windows_1.17.5-stable/flutter/.pub-cache/hosted/pub.dartlang.org/xml-4.5.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
       "name": "vams_internship",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-01-03T04:09:35.804627Z",
+  "generated": "2021-01-10T10:02:12.639212Z",
   "generator": "pub",
   "generatorVersion": "2.10.4"
 }

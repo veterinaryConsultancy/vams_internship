@@ -48,10 +48,10 @@ class _WelcomePageState extends State<WelcomePage> {
 
   Widget _signUpButton() {
     return InkWell(
-       onTap: () {
-         Navigator.push(
-             context, MaterialPageRoute(builder: (context) => SignUpPage()));
-       },
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => SignUpPage()));
+      },
       child: Container(
         width: MediaQuery.of(context).size.width,
         padding: EdgeInsets.symmetric(vertical: 13),
@@ -63,6 +63,26 @@ class _WelcomePageState extends State<WelcomePage> {
         child: Text(
           'Register now',
           style: TextStyle(fontSize: 20, color: Colors.blueAccent),
+        ),
+      ),
+    );
+  }
+
+  Widget _signUpButton1() {
+    return InkWell(
+      // onTap: () {
+      //   Navigator.push(
+      //       context, MaterialPageRoute(builder: (context) => SignUpPage()));
+      // },
+      child: Container(
+        width: 200,
+        height: 200,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          image: DecorationImage(
+              // image: AssetImage("assets/logo1.gif"),
+               image: NetworkImage('https://i.pinimg.com/originals/78/d8/bc/78d8bcedeea91115b4d8352793cc3db5.gif'),
+              fit: BoxFit.fill),
         ),
       ),
     );
@@ -95,17 +115,13 @@ class _WelcomePageState extends State<WelcomePage> {
   //         ],
   //       ));
   // }
-
-Widget _logo() {
-  
-}
   Widget _title() {
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
           text: 'VA',
           style: GoogleFonts.portLligatSans(
-            textStyle: Theme.of(context).textTheme.display1,
+            // textStyle: Theme.of(context).textTheme.display1,
             fontSize: 30,
             fontWeight: FontWeight.w700,
             color: Colors.white,
@@ -126,43 +142,48 @@ Widget _logo() {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:SingleChildScrollView(
-        child:Container(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            height: MediaQuery.of(context).size.height,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(5)),
-                boxShadow: <BoxShadow>[
-                  BoxShadow(
-                      color: Colors.grey.shade200,
-                      offset: Offset(2, 4),
-                      blurRadius: 5,
-                      spreadRadius: 2)
-                ],
-                gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [Color(0xff3030F4), Color(0xF8F9F9)])),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                _title(),
-                SizedBox(
-                  height: 300,
-                ),
-                _submitButton(),
-                SizedBox(
-                  height: 20,
-                ),
-                _signUpButton(),
-                SizedBox(
-                  height: 20,
-                ),
-                //  _label()
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          height: MediaQuery.of(context).size.height,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(5)),
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                    color: Colors.grey.shade200,
+                    offset: Offset(2, 4),
+                    blurRadius: 5,
+                    spreadRadius: 2)
               ],
-            ),
+              gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [Color(0xff3030F4), Color(0xF8F9F9)])),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              _title(),
+              SizedBox(
+                height: 100,
+              ),
+
+              _signUpButton1(),
+              SizedBox(
+                height: 100,
+              ),
+              _submitButton(),
+              SizedBox(
+                height: 20,
+              ),
+              _signUpButton(),
+              SizedBox(
+                height: 20,
+              ),
+              //  _label()
+            ],
           ),
+        ),
       ),
     );
   }

@@ -4,6 +4,12 @@ import 'package:vams_internship/Widget/size_config.dart';
 
 const kPrimaryColor = Color(0xFF007474);
 const kPrimaryLightColor = Color(0xFFFFECDF);
+// const kTextColor = Color(0xFF535353);
+const kTextLightColor = Color(0xFFACACAC);
+
+const kDefaultPaddin = 20.0;
+
+
 const kPrimaryGradientColor = LinearGradient(
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,
