@@ -1,0 +1,190 @@
+import 'package:flutter/material.dart';
+// import 'package:flutter_login_signup/src/loginPage.dart';
+// import 'package:flutter_login_signup/src/signup.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:vams_internship/signup.dart';
+
+import 'login.dart';
+
+class WelcomePage extends StatefulWidget {
+  static String routeName;
+
+  WelcomePage({Key key, this.title}) : super(key: key);
+
+  final String title;
+
+  @override
+  _WelcomePageState createState() => _WelcomePageState();
+}
+
+class _WelcomePageState extends State<WelcomePage> {
+  Widget _submitButton() {
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => LoginPage()));
+      },
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.symmetric(vertical: 13),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(5)),
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                  color: Color(0xffdf8e33).withAlpha(100),
+                  offset: Offset(2, 4),
+                  blurRadius: 8,
+                  spreadRadius: 2)
+            ],
+            color: Colors.white),
+        child: Text(
+          'Login',
+          style: TextStyle(fontSize: 20, color: Color(0xfff7892b)),
+        ),
+      ),
+    );
+  }
+
+  Widget _signUpButton() {
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => SignUpPage()));
+      },
+      child: Container(
+        width: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.symmetric(vertical: 13),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(5)),
+          border: Border.all(color: Colors.indigo, width: 2),
+        ),
+        child: Text(
+          'Register now',
+          style: TextStyle(fontSize: 20, color: Colors.blueAccent),
+        ),
+      ),
+    );
+  }
+
+  Widget _signUpButton1() {
+    return InkWell(
+      // onTap: () {
+      //   Navigator.push(
+      //       context, MaterialPageRoute(builder: (context) => SignUpPage()));
+      // },
+      child: Container(
+        width: 200,
+        height: 200,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          image: DecorationImage(
+              // image: AssetImage("assets/logo1.gif"),
+               image: NetworkImage('https://i.pinimg.com/originals/78/d8/bc/78d8bcedeea91115b4d8352793cc3db5.gif'),
+              fit: BoxFit.fill),
+        ),
+      ),
+    );
+  }
+
+  // Widget _label() {
+  //   return Container(
+  //       margin: EdgeInsets.only(top: 40, bottom: 20),
+  //       child: Column(
+  //         children: <Widget>[
+  //           Text(
+  //             'Quick login with Touch ID',
+  //             style: TextStyle(color: Colors.white, fontSize: 17),
+  //           ),
+  //           SizedBox(
+  //             height: 20,
+  //           ),
+  //           Icon(Icons.fingerprint, size: 90, color: Colors.white),
+  //           SizedBox(
+  //             height: 20,
+  //           ),
+  //           Text(
+  //             'Touch ID',
+  //             style: TextStyle(
+  //               color: Colors.white,
+  //               fontSize: 15,
+  //               decoration: TextDecoration.underline,
+  //             ),
+  //           ),
+  //         ],
+  //       ));
+  // }
+  Widget _title() {
+    return RichText(
+      textAlign: TextAlign.center,
+      text: TextSpan(
+          text: 'VA',
+          style: GoogleFonts.portLligatSans(
+            // textStyle: Theme.of(context).textTheme.display1,
+            fontSize: 30,
+            fontWeight: FontWeight.w700,
+            color: Colors.white,
+          ),
+          children: [
+            TextSpan(
+              text: 'MS',
+              style: TextStyle(color: Colors.black, fontSize: 30),
+            ),
+            // TextSpan(
+            //   text: 'rnz',
+            //   style: TextStyle(color: Colors.white, fontSize: 30),
+            // ),
+          ]),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          height: MediaQuery.of(context).size.height,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(5)),
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                    color: Colors.grey.shade200,
+                    offset: Offset(2, 4),
+                    blurRadius: 5,
+                    spreadRadius: 2)
+              ],
+              gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [Color(0xff3030F4), Color(0xF8F9F9)])),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              _title(),
+              SizedBox(
+                height: 100,
+              ),
+
+              _signUpButton1(),
+              SizedBox(
+                height: 100,
+              ),
+              _submitButton(),
+              SizedBox(
+                height: 20,
+              ),
+              _signUpButton(),
+              SizedBox(
+                height: 20,
+              ),
+              //  _label()
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
