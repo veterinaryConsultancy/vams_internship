@@ -24,57 +24,50 @@ class UserProfile extends StatelessWidget {
         title: Padding(
           ///overall padding for appbar contents
           padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              Icon(
+                Icons.arrow_back_ios,
+                color: Colors.white,
+              ),
+              Text(
+                'Back',
+                style: TextStyle(color: Colors.white, fontSize: 17),
+              ),
 
-          ///back button with functionality added
-          child: GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Row(
-              children: [
-                Icon(
-                  Icons.arrow_back_ios,
-                  color: Colors.white,
-                ),
-                Text(
-                  'Back',
-                  style: TextStyle(color: Colors.white, fontSize: 17),
-                ),
-
-                ///Actual title of the app(here a logo) as it is part of a multiscreen app
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.5,
-                  child: Center(
+              ///Actual title of the app(here a logo) as it is part of a multiscreen app
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.5,
+                child: Center(
+                  child: CircleAvatar(
+                    radius: 22,
+                    backgroundColor: Colors.white,
                     child: CircleAvatar(
-                      radius: 22,
-                      backgroundColor: Colors.white,
-                      child: CircleAvatar(
-                        radius: 20,
-                        backgroundColor: Color(0xff095CE6),
+                      radius: 20,
+                      backgroundColor: Color(0xff095CE6),
 
-                        ///VAMS logo
-                        backgroundImage: AssetImage(
-                          'images/logo.png',
-                        ),
+                      ///VAMS logo
+                      backgroundImage: AssetImage(
+                        'images/logo.png',
                       ),
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: 40,
-                ),
+              ),
+              SizedBox(
+                width: 40,
+              ),
 
-                ///Trailing menu icon for additional options
-                //TODO: Add functionality of menu options inside onTap(){}
-                GestureDetector(
-                  onTap: () {},
-                  child: Icon(
-                    CupertinoIcons.ellipsis,
-                    color: Colors.white,
-                  ),
-                )
-              ],
-            ),
+              ///Trailing menu icon for additional options
+              //TODO: Add functionality of menu options inside onTap(){}
+              GestureDetector(
+                onTap: () {},
+                child: Icon(
+                  CupertinoIcons.ellipsis,
+                  color: Colors.white,
+                ),
+              )
+            ],
           ),
         ),
 
