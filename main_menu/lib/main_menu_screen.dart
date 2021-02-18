@@ -91,6 +91,7 @@ class MainMenuScreen extends StatelessWidget {
         ),
         body: Container(
           width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
           padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width * 0.08,
             vertical: 10,
@@ -130,67 +131,69 @@ class MainMenuScreen extends StatelessWidget {
                 ///Container to arrange the gradient container buttons
                 Container(
                   ///Contents arranged in a table form
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          GradContainer(
-                            col: [
-                              Color(0xFFFB2E75),
-                              Color(0xFFFC2B72),
-                              Color(0xFFF560AA),
-                            ],
-                            t1: 'Book',
-                            t2: 'Treatment',
-                            img: 'images/medical-tran.png',
-                          ),
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.04,
-                          ),
-                          GradContainer(
-                            col: [
-                              Color(0xFF1EB3CB),
-                              Color(0xFF50D3E2),
-                              Color(0xFF50D3E2),
-                            ],
-                            t1: 'Build',
-                            t2: 'Your Own',
-                            t3: 'Farm',
-                            img: 'images/barn-trans.png',
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.width * 0.04,
-                      ),
-                      Row(
-                        children: [
-                          GradContainer(
-                            col: [
-                              Color(0xFFFC6B4D),
-                              Color(0xFFF88144),
-                              Color(0xFFF65A29),
-                            ],
-                            t1: 'Buy & Sell',
-                            t2: 'Products',
-                            img: 'images/shopping-cart white trans.png',
-                          ),
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.04,
-                          ),
-                          GradContainer(
-                            col: [
-                              Color(0xFF43F685),
-                              Color(0xFF2DDBA0),
-                              Color(0xFF0CC183),
-                            ],
-                            t1: 'Treatment',
-                            t2: 'Record',
-                            img: 'images/health-report-trans.png',
-                          ),
-                        ],
-                      ),
-                    ],
+                  child: Center(
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            GradContainer(
+                              col: [
+                                Color(0xFFFB2E75),
+                                Color(0xFFFC2B72),
+                                Color(0xFFF560AA),
+                              ],
+                              t1: 'Book',
+                              t2: 'Treatment',
+                              img: 'images/medical-tran.png',
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.06,
+                            ),
+                            GradContainer(
+                              col: [
+                                Color(0xFF1EB3CB),
+                                Color(0xFF50D3E2),
+                                Color(0xFF50D3E2),
+                              ],
+                              t1: 'Build',
+                              t2: 'Your Own',
+                              t3: 'Farm',
+                              img: 'images/barn-trans.png',
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.width * 0.06,
+                        ),
+                        Row(
+                          children: [
+                            GradContainer(
+                              col: [
+                                Color(0xFFFC6B4D),
+                                Color(0xFFF88144),
+                                Color(0xFFF65A29),
+                              ],
+                              t1: 'Buy & Sell',
+                              t2: 'Products',
+                              img: 'images/shopping-cart white trans.png',
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.06,
+                            ),
+                            GradContainer(
+                              col: [
+                                Color(0xFF43F685),
+                                Color(0xFF2DDBA0),
+                                Color(0xFF0CC183),
+                              ],
+                              t1: 'Treatment',
+                              t2: 'Record',
+                              img: 'images/health-report-trans.png',
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Padding(
