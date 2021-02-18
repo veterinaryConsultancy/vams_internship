@@ -18,8 +18,8 @@ class GradContainer extends StatelessWidget {
       onTap: () {},
       child: Container(
         padding: EdgeInsets.all(8),
-        width: MediaQuery.of(context).size.width * 0.37,
-        height: MediaQuery.of(context).size.width * 0.33,
+        width: MediaQuery.of(context).size.width * 0.39,
+        height: MediaQuery.of(context).size.width * 0.35,
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
