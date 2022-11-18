@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(App());
+  runApp(const App());
 }
 
 class App extends StatefulWidget {
@@ -30,22 +30,23 @@ class _AppState extends State<App> {
         ),
       ],
       child: GetMaterialApp(
-          home: FutureBuilder(
-        future: _initialization,
-        builder: (context, snapshot) {
-          if (snapshot.hasError) {
-            return const SomethingWentWrong();
-          }
+        home: FutureBuilder(
+          future: _initialization,
+          builder: (context, snapshot) {
+            if (snapshot.hasError) {
+              return const SomethingWentWrong();
+            }
 
-          if (snapshot.connectionState == ConnectionState.done) {
-            return const InventoryListPage();
-          }
+            if (snapshot.connectionState == ConnectionState.done) {
+              return const InventoryListPage();
+            }
 
-          return const Scaffold(
-            body: CircularProgressIndicator(),
-          );
-        },
-      )),
+            return const Scaffold(
+              body: CircularProgressIndicator(),
+            );
+          },
+        ),
+      ),
     );
   }
 }

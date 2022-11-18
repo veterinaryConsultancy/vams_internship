@@ -20,7 +20,7 @@ class _InventoryListPageState extends State<InventoryListPage> {
   @override
   void initState() {
     controller = Provider.of<InventoryController>(context, listen: false);
-    WidgetsBinding.instance!.addPostFrameCallback(
+    WidgetsBinding.instance.addPostFrameCallback(
       (_) => controller.getInventoryList(),
     );
 

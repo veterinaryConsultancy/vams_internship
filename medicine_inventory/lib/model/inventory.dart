@@ -1,14 +1,16 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class Inventory {
   String? authorizedBy;
   String? code_value;
   String? description;
   DateTime? expiryDate;
   String? hospitalId;
-  DateTime? listedTimeStamp;
+  Timestamp? listedTimeStamp;
   String? mobile;
   String? productName;
   String? productType;
-  String? quantity;
+  int? quantity;
   String? status;
   String? unitCost;
 
@@ -34,7 +36,7 @@ class Inventory {
       description: json['description'],
       expiryDate: DateTime.parse(json['expiryDate']),
       hospitalId: json['hospitalId'],
-      listedTimeStamp: DateTime.parse(json['listedTimeStamp']),
+      listedTimeStamp: json['listedTimeStamp'],
       mobile: json['mobile'],
       productName: json['productName'],
       productType: json['productType'],
@@ -51,7 +53,7 @@ class Inventory {
       'description': description,
       'expiryDate': expiryDate!.toIso8601String(),
       'hospitalId': hospitalId,
-      'listedTimeStamp': listedTimeStamp!.toIso8601String(),
+      'listedTimeStamp': listedTimeStamp!.toDate().toIso8601String(),
       'mobile': mobile,
       'productName': productName,
       'productType': productType,
