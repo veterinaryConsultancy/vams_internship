@@ -60,8 +60,4 @@ class InventoryController extends ChangeNotifier {
     }
     notifyListeners();
   }
-
-  void addNameToList() {
-    _cloudFirestoreHelper.addMedicineToList("tanmoy");
-  }
 }

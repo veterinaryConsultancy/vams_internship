@@ -56,12 +56,6 @@ class _InventoryListPageState extends State<InventoryListPage> {
               );
             },
           ),
-          IconButton(
-            onPressed: () {
-              controller.addNameToList();
-            },
-            icon: const Icon(Icons.ac_unit),
-          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
