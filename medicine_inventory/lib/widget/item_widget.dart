@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:medicine_inventory/model/inventory.dart';
 
-Container itemWidget(Inventory e) {
+Container itemWidget(Inventory e, VoidCallback onDelete,VoidCallback onUpdate) {
   return Container(
     margin: const EdgeInsets.all(8),
     decoration: BoxDecoration(
@@ -17,8 +17,27 @@ Container itemWidget(Inventory e) {
       subtitle: Text(
         "Expiry: ${DateFormat('yyyy-MM-dd').format(e.expiryDate!)}",
       ),
-      trailing: Text(
-        "Qty: " + e.quantity.toString(),
+      trailing: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            "Qty: " + e.quantity.toString(),
+          ),
+          IconButton(
+            onPressed: onUpdate,
+            icon: const Icon(
+              Icons.add,
+              color: Colors.green,
+            ),
+          ),
+          IconButton(
+            onPressed: onDelete,
+            icon: const Icon(
+              Icons.delete,
+              color: Colors.red,
+            ),
+          ),
+        ],
       ),
     ),
   );

@@ -1,18 +1,21 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:isar/isar.dart';
+part 'inventory.g.dart';
 
+@collection
 class Inventory {
+  Id id = Isar.autoIncrement;
   String? authorizedBy;
   String? code_value;
   String? description;
   DateTime? expiryDate;
   String? hospitalId;
-  Timestamp? listedTimeStamp;
   String? mobile;
   String? productName;
   String? productType;
   int? quantity;
   String? status;
   String? unitCost;
+  bool isSynced;
 
   Inventory({
     this.authorizedBy,
@@ -20,13 +23,13 @@ class Inventory {
     this.description,
     this.expiryDate,
     this.hospitalId,
-    this.listedTimeStamp,
     this.mobile,
     this.productName,
     this.productType,
     this.quantity,
     this.status,
     this.unitCost,
+    this.isSynced = true,
   });
 
   factory Inventory.fromJson(json) {
@@ -36,7 +39,6 @@ class Inventory {
       description: json['description'],
       expiryDate: DateTime.parse(json['expiryDate']),
       hospitalId: json['hospitalId'],
-      listedTimeStamp: json['listedTimeStamp'],
       mobile: json['mobile'],
       productName: json['productName'],
       productType: json['productType'],
@@ -48,12 +50,12 @@ class Inventory {
 
   Map<String, dynamic> toJson() {
     return {
+      "id": id,
       'authorizedBy': authorizedBy,
       'code_value': code_value,
       'description': description,
       'expiryDate': expiryDate!.toIso8601String(),
       'hospitalId': hospitalId,
-      'listedTimeStamp': listedTimeStamp!.toDate().toIso8601String(),
       'mobile': mobile,
       'productName': productName,
       'productType': productType,

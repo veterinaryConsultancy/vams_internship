@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:medicine_inventory/controller/inventory_controller.dart';
 import 'package:medicine_inventory/model/inventory.dart';
@@ -148,8 +147,8 @@ class _AddMedicinePageState extends State<AddMedicinePage> {
                   });
                 },
                 onSaved: (value) {
-                  inventory.listedTimeStamp = Timestamp.fromDate(
-                      DateTime.parse(listedDateController.text));
+                  // inventory.listedTimeStamp = Timestamp.fromDate(
+                  //     DateTime.parse(listedDateController.text));
                 },
               ),
               ElevatedButton(
@@ -158,6 +157,7 @@ class _AddMedicinePageState extends State<AddMedicinePage> {
                   // ignore: avoid_print
                   print(inventory.toJson());
                   _inventoryController.addInventory(inventory);
+                  Navigator.pop(context);
                 },
                 child: const Text('Add Medicine'),
               ),

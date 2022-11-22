@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
+import 'package:medicine_inventory/model/inventory.dart';
 
 class CloudFirestoreHelper {
   static final FirebaseFirestore firestore = FirebaseFirestore.instance;
@@ -12,6 +13,7 @@ class CloudFirestoreHelper {
 
   Future getAllMedicine() async {
     List data = [];
+    List<Inventory> allMedicine = [];
 
     await inventory.get().then((QuerySnapshot value) {
       for (var element in value.docs) {
@@ -19,7 +21,11 @@ class CloudFirestoreHelper {
       }
     });
 
-    return data;
+    for (var document in data) {
+      allMedicine.add(Inventory.fromJson(document));
+    }
+
+    return allMedicine;
   }
 
   addMedicine(Map data) async {
@@ -56,5 +62,29 @@ class CloudFirestoreHelper {
         );
       },
     );
+  }
+
+  removeInventory(Inventory medicineItem) async {
+    await inventory
+        .where("code_value", isEqualTo: medicineItem.code_value)
+        .get()
+        .then((value) async {
+      DocumentSnapshot doc = value.docs.first;
+      await inventory.doc(doc.id).delete();
+    });
+  }
+
+  updateMedicine(Inventory medicine) async {
+    await inventory
+        .where("code_value", isEqualTo: medicine.code_value)
+        .get()
+        .then((value) async {
+      if (value.docs.isEmpty) {
+        addMedicine(medicine.toJson());
+      } else {
+        DocumentSnapshot doc = value.docs.first;
+        await inventory.doc(doc.id).update(medicine.toJson());
+      }
+    });
   }
 }
